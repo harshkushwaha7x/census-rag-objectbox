@@ -1,48 +1,134 @@
-# End to End RAG Project using ObjectBox and LangChain
- - In this end to end project I have built a RAG app using ObjectBox Vector Databse and LangChain. RAG techniques allow us to augment a language model's knowledge base actively, ensuring your AI can access and reason with your data and the very latest information. With ObjectBox you can do that, without the data ever needing to leave the device.
+# Census RAG: ObjectBox & LangChain
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![LangChain](https://img.shields.io/badge/LangChain-0.1.20-green.svg)](https://www.langchain.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-red.svg)](https://streamlit.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+> An advanced RAG (Retrieval-Augmented Generation) system that uses ObjectBox vector database and Groq's LLAMA3 model to intelligently retrieve and answer questions from US Census PDF documents.
 
 ![Streamlit Web App Interface](./images/RAG%20app%20UI.png)
 
-## DEMO
+## 🌟 Features
+
+- 📊 **Local Vector Database**: Uses ObjectBox for efficient, on-device vector storage
+- 🤖 **Powered by LLAMA3**: Leverages Groq's LLAMA3-8B model for intelligent responses
+- 📄 **Multi-PDF Support**: Process and query multiple US Census PDF documents
+- ⚡ **Fast Retrieval**: Quick semantic search and answer generation
+- 🎨 **Clean UI**: User-friendly Streamlit interface with real-time feedback
+- 🔒 **Privacy-Focused**: All data processing happens locally
+
+## 🎬 DEMO
  - You can check the project live [here](https://8512-01hwj8ynshjz7spkr595x77ec2.cloudspaces.litng.ai/)
 
-## Description
-- This project showcase the implementation of an advanced RAG system that uses Objectbox vectordatabse and Groq's LLAM3 model as an llm to retrieve information from different PDF documents.
+## 📖 Description
 
-Steps I followed:
-1. I have used the `PyPdfDirectoryLoader` from the `langchain_community` document loader to load the PDF documents from the `us-census-data` directory.
-2. transformed each text into a chunk of `1000` using the `RecursiveCharacterTextSplitter` imported from the `langchain.text_splitter`
-3. stored the vector embeddings which were made using the `HuggingFaceBgeEmbeddings` using the `ObjectBox` vector store.
-4. setup the llm `ChatGroq` with the model name `Llama3-8b-8192`
-5. Setup `ChatPromptTemplate`
-6. Setup `vector_embedding` function to enbedd the documents and store them in the `ObjectBox` vectorstore
-7. finally created the `document_chain` and `retrieval_chain` for chaining llm to prompt and `retriever` to `document_chain` respectively
+This project showcases the implementation of an advanced RAG system that uses ObjectBox vector database and Groq's LLAMA3 model as an LLM to retrieve information from US Census PDF documents.
 
-## Libraries Used
- - langchain==0.1.20
- - langchain-community==0.0.38
- - langchain-core==0.1.52
- - langchain-groq==0.1.3
- - langchain-objectbox
- - python-dotenv==1.0.1
- - pypdf==4.2.0
+### 🔧 Technical Implementation
 
-## Installation
- 1. Prerequisites
-    - Git
-    - Command line familiarity
- 2. Clone the Repository: `git clone https://github.com/NebeyouMusie/End-to-End-RAG-Project-using-ObjectBox-and-LangChain.git`
- 3. Create and Activate Virtual Environment (Recommended)
-    - `python -m venv venv`
-    - `source venv/bin/activate`
- 4. Navigate to the projects directory `cd ./End-to-End-RAG-Project-using-ObjectBox-and-LangChain` using your terminal
- 5. Install Libraries: `pip install -r requirements.txt`
- 6. Navigate to the app directory `cd ./app` using your terminal 
- 7. run `streamlit run app.py`
- 8. open the link displayed in the terminal on your preferred browser
- 9. As I have already embedded the documents you don't need to click on the `Embedd Documents` button/ But, if it's not working then you need to click on the `Embedd Documents` button and wait until the documnets are processed
- 10. Enter your question from the PDFs found in the `us-census-data` directory
+1. **Document Loading**: Used `PyPDFDirectoryLoader` from `langchain_community` to load PDF documents from the `us-census-data` directory
+2. **Text Chunking**: Transformed each text into chunks of 1000 characters using `RecursiveCharacterTextSplitter` with 200 character overlap
+3. **Embeddings**: Created vector embeddings using `HuggingFaceBgeEmbeddings` (BAAI/bge-small-en-v1.5 model)
+4. **Vector Storage**: Stored embeddings in `ObjectBox` vector store for efficient retrieval
+5. **LLM Setup**: Configured `ChatGroq` with Llama3-8b-8192 model
+6. **Prompt Engineering**: Designed custom `ChatPromptTemplate` for context-aware responses
+7. **RAG Pipeline**: Created `document_chain` and `retrieval_chain` for seamless question answering
+
+## 🛠️ Technologies Used
+
+- **LangChain** (0.1.20) - Framework for LLM applications
+- **ObjectBox** - High-performance vector database
+- **Groq** - Fast LLM inference with LLAMA3
+- **HuggingFace** - BGE embeddings model
+- **Streamlit** - Interactive web interface
+- **PyPDF** - PDF document processing
+
+## 📦 Installation
+
+### Prerequisites
+- Python 3.8 or higher
+- Git
+- Groq API key ([Get one here](https://console.groq.com/))
+
+### Setup Instructions
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/harshkushwaha7x/census-rag-objectbox.git
+   cd census-rag-objectbox
+   ```
+
+2. **Create Virtual Environment**
+   ```bash
+   python -m venv venv
+   
+   # On Windows
+   venv\Scripts\activate
+   
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
+
+3. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure Environment Variables**
+   ```bash
+   # Copy the example environment file
+   copy .env.example .env  # Windows
+   cp .env.example .env    # macOS/Linux
+   
+   # Edit .env and add your Groq API key
+   GROQ_API_KEY=your_actual_api_key_here
+   ```
+
+5. **Run the Application**
+   ```bash
+   cd app
+   streamlit run app.py
+   ```
+
+6. **Access the Application**
+   - Open your browser and navigate to `http://localhost:8501`
+   - Click "Embedd Documents" button (if needed)
+   - Start asking questions about US Census data!
+
+## 🚀 Usage
+
+1. **First Time Setup**: Click the "📚 Embedd Documents" button to process and store PDF documents
+2. **Ask Questions**: Enter questions in the text input field
+3. **View Results**: Get AI-generated answers with source document references
+4. **Explore Context**: Expand "Document Similarity Search Results" to see retrieved chunks
 
 
 
 
+
+## 🤝 Contributing
+
+Contributions are welcome! Please check out our [Contributing Guidelines](./CONTRIBUTING.md) for details on how to get started.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Krish Naik](https://www.youtube.com/@krishnaik06) for educational content and inspiration
+- [ObjectBox](https://objectbox.io/) for the vector database
+- [Groq](https://groq.com/) for fast LLM inference
+- [LangChain](https://www.langchain.com/) for the RAG framework
+
+## 📧 Contact
+
+**Nebeyou Musie**
+- 💼 LinkedIn: [Nebeyou Musie](https://www.linkedin.com/in/nebeyou-musie)
+- 📧 Email: nebeyoumusie@gmail.com
+- 💬 Telegram: [@NebeyouMusie](https://t.me/NebeyouMusie)
+
+---
+
+⭐ Star this repository if you find it helpful!
