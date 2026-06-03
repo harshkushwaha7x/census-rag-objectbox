@@ -1,6 +1,7 @@
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from config import load_config, get_groq_api
+from constants import DEFAULT_MODEL_NAME, DEFAULT_EMBEDDING_MODEL, DEVICE, NORMALIZE_EMBEDDINGS
 import logging
 
 # Configure logging
@@ -27,8 +28,8 @@ def groq_llm():
         if not api_key:
             raise ValueError("GROQ_API_KEY not found in environment variables")
         
-        llm = ChatGroq(groq_api_key=api_key, model_name='Llama3-8b-8192')
-        logger.info("Groq LLM initialized successfully")
+        llm = ChatGroq(groq_api_key=api_key, model_name=DEFAULT_MODEL_NAME)
+        logger.info(f"Groq LLM initialized successfully with model: {DEFAULT_MODEL_NAME}")
         return llm
     except Exception as e:
         logger.error(f"Error initializing Groq LLM: {str(e)}")
@@ -44,11 +45,11 @@ def huggingface_instruct_embedding():
     """
     try:
         embeddings = HuggingFaceBgeEmbeddings(
-                    model_name='BAAI/bge-small-en-v1.5',  #sentence-transformers/all-MiniLM-l6-v2
-                    model_kwargs={'device': 'cpu'},
-                    encode_kwargs={'normalize_embeddings': True}
+                    model_name=DEFAULT_EMBEDDING_MODEL,
+                    model_kwargs={'device': DEVICE},
+                    encode_kwargs={'normalize_embeddings': NORMALIZE_EMBEDDINGS}
         )
-        logger.info("HuggingFace embeddings initialized successfully")
+        logger.info(f"HuggingFace embeddings initialized successfully with model: {DEFAULT_EMBEDDING_MODEL}")
         return embeddings
     except Exception as e:
         logger.error(f"Error initializing embeddings: {str(e)}")
