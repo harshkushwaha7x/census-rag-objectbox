@@ -8,29 +8,24 @@ from langchain.chains import create_retrieval_chain
 from langchain_objectbox.vectorstores import ObjectBox
 from langchain_core.prompts import ChatPromptTemplate
 from utils import groq_llm, huggingface_instruct_embedding
+from constants import (
+    APP_TITLE, APP_SUBTITLE, PAGE_ICON,
+    CHUNK_SIZE, CHUNK_OVERLAP, MAX_DOCUMENTS_TO_PROCESS,
+    PDF_DATA_DIR, OBJECTBOX_DB_DIR, EMBEDDING_DIMENSIONS,
+    RAG_PROMPT_TEMPLATE
+)
 
 # Page configuration
 st.set_page_config(
     layout='wide', 
     page_title="Census RAG - ObjectBox & LangChain",
-    page_icon="📊"
+    page_icon=PAGE_ICON
 )
 
-st.title('📊 Census RAG: ObjectBox VectorstoreDB with LLAMA3')
-st.markdown("### Ask questions about US Census data using AI-powered retrieval")
+st.title(f'{PAGE_ICON} {APP_TITLE}')
+st.markdown(f"### {APP_SUBTITLE}")
 
-prompt = ChatPromptTemplate.from_template(
-    """
-    
-    Answer the questions based on the provided context only.
-    Please provide the most accurate response based on the question
-    <context>
-    {context}
-    <context>
-    Questions: {input}
-
-    """
-)
+prompt = ChatPromptTemplate.from_template(RAG_PROMPT_TEMPLATE)
 
 # function for vector embedding and Objectbox VectorstoreDB
 def vector_embedding():
@@ -41,15 +36,20 @@ def vector_embedding():
         with st.spinner('Processing documents... This may take a few minutes.'):
             try:
                 st.session_state.embeddings = huggingface_instruct_embedding()
-                st.session_state.loader = PyPDFDirectoryLoader('End-to-End-RAG-Project-using-ObjectBox-and-Langchain/us-census-data')
+                st.session_state.loader = PyPDFDirectoryLoader(PDF_DATA_DIR)
                 st.session_state.docs = st.session_state.loader.load()
-                st.session_state.text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-                st.session_state.final_documents = st.session_state.text_splitter.split_documents(st.session_state.docs[:200])
+                st.session_state.text_splitter = RecursiveCharacterTextSplitter(
+                    chunk_size=CHUNK_SIZE, 
+                    chunk_overlap=CHUNK_OVERLAP
+                )
+                st.session_state.final_documents = st.session_state.text_splitter.split_documents(
+                    st.session_state.docs[:MAX_DOCUMENTS_TO_PROCESS]
+                )
                 st.session_state.vectors = ObjectBox.from_documents(
                     st.session_state.final_documents, 
                     st.session_state.embeddings, 
-                    embedding_dimensions=768, 
-                    db_directory='End-to-End-RAG-Project-using-ObjectBox-and-Langchain/objectbox'
+                    embedding_dimensions=EMBEDDING_DIMENSIONS, 
+                    db_directory=OBJECTBOX_DB_DIR
                 )
                 st.success('✅ Documents processed and embedded successfully!')
             except Exception as e:
