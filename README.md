@@ -103,6 +103,58 @@ This project showcases the implementation of an advanced RAG system that uses Ob
 3. **View Results**: Get AI-generated answers with source document references
 4. **Explore Context**: Expand "Document Similarity Search Results" to see retrieved chunks
 
+## 🐳 Docker Deployment
+
+### Quick Start with Docker Compose
+
+1. **Setup Environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your GROQ_API_KEY
+   ```
+
+2. **Build and Run**
+   ```bash
+   docker-compose up -d
+   ```
+
+3. **Access Application**
+   - Open browser to `http://localhost:8501`
+
+4. **View Logs**
+   ```bash
+   docker-compose logs -f
+   ```
+
+5. **Stop Application**
+   ```bash
+   docker-compose down
+   ```
+
+### Using Docker Only
+
+```bash
+# Build image
+docker build -t census-rag:latest .
+
+# Run container
+docker run -d \
+  --name census-rag \
+  -p 8501:8501 \
+  -v $(pwd)/objectbox:/app/objectbox \
+  -e GROQ_API_KEY=your_api_key_here \
+  census-rag:latest
+```
+
+For detailed deployment options (AWS, GCP, Azure, Heroku), see [DEPLOYMENT.md](./docs/DEPLOYMENT.md)
+
+## 📚 Documentation
+
+- [Architecture Overview](./docs/ARCHITECTURE.md) - System design and data flow
+- [API Documentation](./docs/API.md) - Module and function reference
+- [FAQ & Troubleshooting](./docs/FAQ.md) - Common questions and solutions
+- [Deployment Guide](./docs/DEPLOYMENT.md) - Production deployment options
+
 
 
 
