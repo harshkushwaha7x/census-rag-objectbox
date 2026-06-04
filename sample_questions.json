@@ -1,0 +1,75 @@
+{
+  "categories": {
+    "population": [
+      "What is the total population mentioned in the census data?",
+      "What are the population trends over the years?",
+      "Which regions show the highest population growth?",
+      "What is the population density distribution?"
+    ],
+    "demographics": [
+      "What are the age distribution patterns in the census?",
+      "What is the gender ratio mentioned in the data?",
+      "How has the demographic composition changed?",
+      "What are the racial and ethnic demographics?"
+    ],
+    "economics": [
+      "What are the income distribution patterns?",
+      "What is the median household income?",
+      "What are the employment statistics?",
+      "How has poverty rate changed over time?"
+    ],
+    "housing": [
+      "What are the homeownership rates?",
+      "What is the median home value?",
+      "What percentage of people are renters vs owners?",
+      "What are the housing trends in urban vs rural areas?"
+    ],
+    "education": [
+      "What are the educational attainment levels?",
+      "What percentage of the population has a college degree?",
+      "How do education levels vary by region?",
+      "What are the literacy rates?"
+    ],
+    "migration": [
+      "What are the migration patterns mentioned?",
+      "How many people moved between states?",
+      "What are the reasons for migration?",
+      "Which states have the highest in-migration?"
+    ],
+    "general": [
+      "What are the key findings in the census report?",
+      "Summarize the main demographic changes",
+      "What were the most significant trends observed?",
+      "What time period does the census data cover?"
+    ]
+  },
+  "example_queries": [
+    {
+      "question": "What is the population trend in the United States?",
+      "category": "population",
+      "difficulty": "easy"
+    },
+    {
+      "question": "How has household composition changed over the last decade?",
+      "category": "demographics",
+      "difficulty": "medium"
+    },
+    {
+      "question": "Compare the median income across different demographic groups",
+      "category": "economics",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What factors influence homeownership rates?",
+      "category": "housing",
+      "difficulty": "medium"
+    }
+  ],
+  "tips": [
+    "Be specific in your questions for better results",
+    "Ask one question at a time for clearer answers",
+    "Reference specific time periods if mentioned in documents",
+    "Use proper terminology from census data (e.g., 'median household income' instead of 'average pay')",
+    "You can ask follow-up questions to dive deeper into topics"
+  ]
+}
