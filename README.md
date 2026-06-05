@@ -9,7 +9,7 @@
 
 ![Streamlit Web App Interface](./images/RAG%20app%20UI.png)
 
-## 🌟 Features
+## Features
 
 - 📊 **Local Vector Database**: Uses ObjectBox for efficient, on-device vector storage
 - 🤖 **Powered by LLAMA3**: Leverages Groq's LLAMA3-8B model for intelligent responses
