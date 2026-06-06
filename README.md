@@ -163,19 +163,11 @@ Contributions are welcome! Please check out our [Contributing Guidelines](./CONT
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-## Acknowledgments
-
-- [Krish Naik](https://www.youtube.com/@krishnaik06) for educational content and inspiration
-- [ObjectBox](https://objectbox.io/) for the vector database
-- [Groq](https://groq.com/) for fast LLM inference
-- [LangChain](https://www.langchain.com/) for the RAG framework
-
 ## Contact
 
 **Nebeyou Musie**
-- LinkedIn: [Nebeyou Musie](https://www.linkedin.com/in/nebeyou-musie)
-- Email: nebeyoumusie@gmail.com
-- Telegram: [@NebeyouMusie](https://t.me/NebeyouMusie)
+- LinkedIn: [Harsh](https://www.linkedin.com/in/nebeyou-musie)
+- Email: harshkushwaha4151@gmail.com
 
 ---
 
