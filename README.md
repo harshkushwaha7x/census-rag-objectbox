@@ -11,21 +11,21 @@
 
 ## Features
 
-- 📊 **Local Vector Database**: Uses ObjectBox for efficient, on-device vector storage
-- 🤖 **Powered by LLAMA3**: Leverages Groq's LLAMA3-8B model for intelligent responses
-- 📄 **Multi-PDF Support**: Process and query multiple US Census PDF documents
-- ⚡ **Fast Retrieval**: Quick semantic search and answer generation
-- 🎨 **Clean UI**: User-friendly Streamlit interface with real-time feedback
-- 🔒 **Privacy-Focused**: All data processing happens locally
+- **Local Vector Database**: Uses ObjectBox for efficient, on-device vector storage
+- **Powered by LLAMA3**: Leverages Groq's LLAMA3-8B model for intelligent responses
+- **Multi-PDF Support**: Process and query multiple US Census PDF documents
+- **Fast Retrieval**: Quick semantic search and answer generation
+- **Clean UI**: User-friendly Streamlit interface with real-time feedback
+- **Privacy-Focused**: All data processing happens locally
 
-## 🎬 DEMO
+## DEMO
  - You can check the project live [here](https://8512-01hwj8ynshjz7spkr595x77ec2.cloudspaces.litng.ai/)
 
-## 📖 Description
+## Description
 
 This project showcases the implementation of an advanced RAG system that uses ObjectBox vector database and Groq's LLAMA3 model as an LLM to retrieve information from US Census PDF documents.
 
-### 🔧 Technical Implementation
+### Technical Implementation
 
 1. **Document Loading**: Used `PyPDFDirectoryLoader` from `langchain_community` to load PDF documents from the `us-census-data` directory
 2. **Text Chunking**: Transformed each text into chunks of 1000 characters using `RecursiveCharacterTextSplitter` with 200 character overlap
@@ -35,7 +35,7 @@ This project showcases the implementation of an advanced RAG system that uses Ob
 6. **Prompt Engineering**: Designed custom `ChatPromptTemplate` for context-aware responses
 7. **RAG Pipeline**: Created `document_chain` and `retrieval_chain` for seamless question answering
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **LangChain** (0.1.20) - Framework for LLM applications
 - **ObjectBox** - High-performance vector database
@@ -44,7 +44,7 @@ This project showcases the implementation of an advanced RAG system that uses Ob
 - **Streamlit** - Interactive web interface
 - **PyPDF** - PDF document processing
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -96,14 +96,14 @@ This project showcases the implementation of an advanced RAG system that uses Ob
    - Click "Embedd Documents" button (if needed)
    - Start asking questions about US Census data!
 
-## 🚀 Usage
+## Usage
 
-1. **First Time Setup**: Click the "📚 Embedd Documents" button to process and store PDF documents
+1. **First Time Setup**: Click the "Embedd Documents" button to process and store PDF documents
 2. **Ask Questions**: Enter questions in the text input field
 3. **View Results**: Get AI-generated answers with source document references
 4. **Explore Context**: Expand "Document Similarity Search Results" to see retrieved chunks
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 ### Quick Start with Docker Compose
 
@@ -148,39 +148,35 @@ docker run -d \
 
 For detailed deployment options (AWS, GCP, Azure, Heroku), see [DEPLOYMENT.md](./docs/DEPLOYMENT.md)
 
-## 📚 Documentation
+## Documentation
 
 - [Architecture Overview](./docs/ARCHITECTURE.md) - System design and data flow
 - [API Documentation](./docs/API.md) - Module and function reference
 - [FAQ & Troubleshooting](./docs/FAQ.md) - Common questions and solutions
 - [Deployment Guide](./docs/DEPLOYMENT.md) - Production deployment options
 
-
-
-
-
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please check out our [Contributing Guidelines](./CONTRIBUTING.md) for details on how to get started.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Krish Naik](https://www.youtube.com/@krishnaik06) for educational content and inspiration
 - [ObjectBox](https://objectbox.io/) for the vector database
 - [Groq](https://groq.com/) for fast LLM inference
 - [LangChain](https://www.langchain.com/) for the RAG framework
 
-## 📧 Contact
+## Contact
 
 **Nebeyou Musie**
-- 💼 LinkedIn: [Nebeyou Musie](https://www.linkedin.com/in/nebeyou-musie)
-- 📧 Email: nebeyoumusie@gmail.com
-- 💬 Telegram: [@NebeyouMusie](https://t.me/NebeyouMusie)
+- LinkedIn: [Nebeyou Musie](https://www.linkedin.com/in/nebeyou-musie)
+- Email: nebeyoumusie@gmail.com
+- Telegram: [@NebeyouMusie](https://t.me/NebeyouMusie)
 
 ---
 
-⭐ Star this repository if you find it helpful!
+Star this repository if you find it helpful!
