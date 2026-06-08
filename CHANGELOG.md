@@ -159,4 +159,4 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for information on how to contribute to
 
 - 📧 Email: harshkushwaha4151@gmail.com
 - 💬 GitHub Issues: [Report a bug](https://github.com/harshkushwaha7x/census-rag-objectbox/issues)
-- 💼 LinkedIn: [Nebeyou Musie](https://www.linkedin.com/in/harsh-kushwaha-7x)
+- 💼 LinkedIn: [harsh Kushwaha](https://www.linkedin.com/in/harsh-kushwaha-7x)
