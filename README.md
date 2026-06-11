@@ -19,7 +19,7 @@
 - **Privacy-Focused**: All data processing happens locally
 
 ## DEMO
- - You can check the project live [here](https://8512-01hwj8ynshjz7spkr595x77ec2.cloudspaces.litng.ai/)
+ - You can check the project live [here]()
 
 ## Description
 
