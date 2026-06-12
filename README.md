@@ -166,7 +166,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ## Contact
 
 **Nebeyou Musie**
-- LinkedIn: [Harsh](https://www.linkedin.com/in/nebeyou-musie)
+- LinkedIn: [Harsh](https://www.linkedin.com/in/harsh-kushwaha-7x/)
 - Email: harshkushwaha4151@gmail.com
 
 ---
