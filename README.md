@@ -7,8 +7,6 @@
 
 > An advanced RAG (Retrieval-Augmented Generation) system that uses ObjectBox vector database and Groq's LLAMA3 model to intelligently retrieve and answer questions from US Census PDF documents.
 
-![Streamlit Web App Interface](./images/RAG%20app%20UI.png)
-
 ## Features
 
 - **Local Vector Database**: Uses ObjectBox for efficient, on-device vector storage
