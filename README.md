@@ -16,9 +16,6 @@
 - **Clean UI**: User-friendly Streamlit interface with real-time feedback
 - **Privacy-Focused**: All data processing happens locally
 
-## DEMO
- - You can check the project live [here]()
-
 ## Description
 
 This project showcases the implementation of an advanced RAG system that uses ObjectBox vector database and Groq's LLAMA3 model as an LLM to retrieve information from US Census PDF documents.
